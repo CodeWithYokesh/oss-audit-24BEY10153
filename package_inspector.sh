@@ -1,29 +1,10 @@
 #!/bin/bash
-# Script 2: FOSS Package Inspector
-# Author: YOKESH T
-
-
-PACKAGE="vlc"   # Change this if needed
-
-
-# Check if package is installed (works for Debian/Ubuntu systems)
-if dpkg -l | grep -w $PACKAGE &>/dev/null; then
-    echo "$PACKAGE is installed."
-    dpkg -l | grep -w $PACKAGE
+PACKAGE="apache2"
+if dpkg -l | grep -q $PACKAGE; then
+echo "$PACKAGE is installed."
+dpkg -l | grep $PACKAGE
 else
-    echo "$PACKAGE is NOT installed."
-fi
-
-
-echo "----------------------------------------"
-
-
-# Case statement for package description
+echo "$PACKAGE is NOT installed." fi
 case $PACKAGE in
-    httpd) echo "Apache: the web server that built the open internet" ;;
-    mysql) echo "MySQL: open source at the heart of millions of apps" ;;
-    vlc) echo "VLC: a powerful open-source media player for all formats" ;;
-    firefox) echo "Firefox: privacy-focused open-source web browser" ;;
-    gimp) echo "GIMP: free and open-source image editing software" ;;
-    *) echo "Unknown package: no description available" ;;
-esac
+apache2) echo "Apache: A powerful open-source web server”;; mysql) echo "MySQL: Open-source relational database system”;; firefox) echo "Firefox: Open web browser promoting privacy" ;; vlc) echo "VLC: Free multimedia player supporting all formats”;;
+*) echo "Unknown package”;; esac
