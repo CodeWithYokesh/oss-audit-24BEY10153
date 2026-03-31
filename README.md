@@ -1,125 +1,198 @@
-# OSS Audit Project
-
-## 👤 Student Details
-
-* **Name:** YOKESH T
-* **Roll Number:** 24BEY10153
-* **Chosen Software:** VLC Media Player
+Here’s a clean, GitHub-ready **README.md** for your project based on your report 
+(Just copy → paste into README.md in your repo 👇)
 
 ---
 
-## 📜 Script 1 — System Identity Report
+# 🔍 The Open-Source Audit
 
-### 🔹 What it does:
+### Capstone Project – Open-Source Software (OSS NGMC)
 
-* Displays Linux distribution & kernel version
-* Shows logged-in user & home directory
-* Displays system uptime and current date/time
-* Shows license info (GPL)
-* Acts like a welcome screen for Linux
+👨‍💻 **Author:** Yokesh T
+🎓 **Course:** Open-Source Software
+🏫 **Institution:** VIT Bhopal University
+📅 **Submission Date:** 31 March 2026
 
-### ▶️ How to run:
+---
 
-```bash
-nano system_report.sh
-chmod +x system_report.sh
-./system_report.sh
+## 📌 Project Overview
+
+This project explores the **concepts and real-world applications of open-source software** through both theory and practical implementation.
+
+It focuses on:
+
+* Understanding open-source philosophy and licensing
+* Studying the **Linux Kernel**
+* Working in a **Linux environment (Kali Linux)**
+* Building shell scripts for **system monitoring and automation**
+
+The project also includes a **log file analyzer** to detect security-related events like failed login attempts and suspicious activity.
+
+---
+
+## 🧠 Key Concepts Covered
+
+### 🔹 Open-Source Philosophy
+
+* Transparency and collaboration
+* Freedom to use, modify, and distribute software
+* Community-driven development
+
+### 🔹 Linux Kernel
+
+* Created by **Linus Torvalds (1991)**
+* Licensed under **GNU General Public License (GPL)**
+* Used in servers, cloud, mobile, and embedded systems
+
+### 🔹 Licensing (GPL)
+
+* Freedom to run, study, modify, and share software
+* Ensures all modified versions remain open-source
+
+---
+
+## ⚙️ Tech Stack & Environment
+
+* 🐧 **Kali Linux (Virtual Machine)**
+* 🖥️ Shell Scripting (Bash)
+* 🛠️ Linux Commands:
+
+  * `grep`, `awk`, `sort`, `uniq`
+  * `systemctl`, `dpkg`, `journalctl`
+
+---
+
+## 📂 Project Structure
+
+```
+Open-Source-Audit/
+│
+├── scripts/
+│   ├── system_identity_report.sh
+│   ├── package_inspector.sh
+│   ├── directory_audit.sh
+│   ├── log_file_analyzer.sh
+│   ├── manifesto_generator.sh
+│   └── advanced_log_analyzer.sh
+│
+├── reports/
+│   └── OSSCapstoneProject.pdf
+│
+└── README.md
 ```
 
 ---
 
-## 📦 Script 2 — FOSS Package Inspector
+## 🚀 Implemented Scripts
 
-### 🔹 What it does:
+### 1️⃣ System Identity Report
 
-* Checks if a package (e.g., vlc, firefox) is installed
-* Displays version/details
-* Uses case statement to describe the software
-* Helps inspect installed open-source software
+Displays:
 
-### ▶️ How to run:
-
-```bash
-nano package_inspector.sh
-chmod +x package_inspector.sh
-./package_inspector.sh
-```
+* Kernel version
+* User info
+* Uptime
+* Distribution
 
 ---
 
-## 💽 Script 3 — Disk and Permission Auditor
+### 2️⃣ FOSS Package Inspector
 
-### 🔹 What it does:
-
-* Loops through important directories
-* Displays:
-
-  * Permissions (owner, group)
-  * Disk usage
-* Checks configuration directory of chosen software
-* Useful for system auditing
-
-### ▶️ How to run:
-
-```bash
-nano disk_audit.sh
-chmod +x disk_audit.sh
-./disk_audit.sh
-```
+* Checks if a package is installed
+* Displays details
+* Gives description of software
 
 ---
 
-## 📊 Script 4 — Log File Analyzer
+### 3️⃣ Disk & Permission Auditor
 
-### 🔹 What it does:
-
-* Reads a log file line-by-line
-* Counts occurrences of a keyword (e.g., `error`)
-* Displays last 5 matching lines
-* Helps analyze logs for issues
-
-### ▶️ How to run:
-
-```bash
-nano log_analyzer.sh
-chmod +x log_analyzer.sh
-
-# run with arguments
-./log_analyzer.sh sample.log error
-```
-
-### 📌 Note:
-
-Make sure the log file exists:
-
-```bash
-nano sample.log
-```
+* Audits key directories
+* Shows permissions & size
 
 ---
 
-## 🧾 Script 5 — Open Source Manifesto Generator
+### 4️⃣ Log File Analyzer
 
-### 🔹 What it does:
+* Counts:
 
-* Asks user 3 questions
-* Generates a personalized manifesto
-* Saves it to a `.txt` file
-* Demonstrates interactive scripting and file writing
-
-### ▶️ How to run:
-
-```bash
-nano manifesto_generator.sh
-chmod +x manifesto_generator.sh
-./manifesto_generator.sh
-```
+  * ERROR lines
+  * WARNING lines
+* Helps in basic log monitoring
 
 ---
 
-## 💡 Project Notes
+### 5️⃣ Open-Source Manifesto Generator
 
-* All scripts are written in Bash
-* Designed for Linux environment
-* Focused on FOSS concepts
-* Demonstrates scripting, automation, and system analysis
+* Takes user input
+* Generates a personal manifesto file
+
+---
+
+### 6️⃣ Advanced Log Analyzer ⭐
+
+* Analyzes SSH logs
+* Detects:
+
+  * Failed logins
+  * Successful logins
+  * Invalid users
+  * Suspicious IPs
+
+---
+
+## 🔐 Real-World Application
+
+This project demonstrates how open-source tools can be used for:
+
+* 🛡️ **Security Monitoring**
+* ⚙️ **System Administration**
+* 🔍 **Log Analysis**
+* 🤖 **Automation using Shell Scripts**
+
+---
+
+## ⚖️ Open-Source vs Proprietary
+
+| Feature       | Open Source | Proprietary   |
+| ------------- | ----------- | ------------- |
+| Source Code   | Available   | Not available |
+| Cost          | Free        | Paid          |
+| Customization | High        | Limited       |
+| Ownership     | Community   | Company       |
+
+---
+
+## 📈 Key Learnings
+
+* Practical understanding of Linux systems
+* Hands-on experience with shell scripting
+* Importance of open-source in modern computing
+* Basics of cybersecurity monitoring
+
+---
+
+## 📌 Conclusion
+
+This project highlights how **open-source software drives innovation, collaboration, and learning**.
+
+It also shows how simple scripting techniques can be used to:
+
+* Automate tasks
+* Monitor systems
+* Improve security awareness
+
+---
+
+## ⭐ Future Scope
+
+* Real-time log monitoring system
+* GUI-based dashboard for analysis
+* Integration with alert systems
+
+---
+
+## 🙌 Acknowledgment
+
+This project is part of the **OSS NGMC course** and reflects both theoretical and practical learning in open-source technologies.
+
+---
+
