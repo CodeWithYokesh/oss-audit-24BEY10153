@@ -1,33 +1,12 @@
 #!/bin/bash
-# Script 1: System Identity Report
-# Author: YOKESH T | Course: Open Source Software
-
-
-# --- Variables ---
-STUDENT_NAME="YOKESH T"
-SOFTWARE_CHOICE="Linux"
-
-
-# --- System info ---
+STUDENT_NAME="Your Name"
+SOFTWARE_CHOICE="Linux Kernel"
 KERNEL=$(uname -r)
 USER_NAME=$(whoami)
-HOME_DIR=$HOME
 UPTIME=$(uptime -p)
-DATE_TIME=$(date)
-DISTRO=$(grep '^PRETTY_NAME' /etc/os-release | cut -d= -f2 | tr -d '"')
-
-
-# --- Display ---
-echo "========================================"
-echo " Open Source Audit — $STUDENT_NAME"
-echo "========================================"
-echo "Software        : $SOFTWARE_CHOICE"
-echo "Distribution    : $DISTRO"
-echo "Kernel Version  : $KERNEL"
-echo "User            : $USER_NAME"
-echo "Home Directory  : $HOME_DIR"
-echo "Uptime          : $UPTIME"
-echo "Date & Time     : $DATE_TIME"
-echo "----------------------------------------"
-echo "License Info    : Linux is distributed under the GNU General Public License (GPL)."
-echo "========================================"
+DATE=$(date)
+DISTRO=$(lsb_release -d | cut -f2)
+HOME_DIR=$HOME
+echo "================================" echo “Open-Source Audit — $STUDENT_NAME" echo "================================" echo "Software Chosen: $SOFTWARE_CHOICE" echo "Kernel Version : $KERNEL"
+echo "User	: $USER_NAME"
+echo "Home Directory: $HOME_DIR" echo "Uptime	: $UPTIME" echo "Date & Time	: $DATE" echo "Distribution : $DISTRO" echo "License	: GPL (General Public License)"
