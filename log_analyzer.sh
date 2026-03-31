@@ -1,40 +1,15 @@
-#!/bin/bash
-# Script 4: Log File Analyzer
-# Author: YOKESH T
-# Usage: ./log_analyzer.sh /var/log/messages error
-
-
-LOGFILE=$1
-KEYWORD=${2:-"error"}   # Default keyword is 'error'
-COUNT=0
-
-
-# Check if file exists
-if [ ! -f "$LOGFILE" ]; then
-    echo "Error: File $LOGFILE not found."
-    exit 1
+#!/bin/bash if [ -z "$1”]; then
+echo "Usage: $0 <logfile>" exit 1
 fi
-
-
-# Do-while style retry if file is empty
-while [ ! -s "$LOGFILE" ]; do
-    echo "File is empty. Waiting for content..."
-    sleep 2
-done
-
-
-# Read file line by line
-while IFS= read -r LINE; do
-    if echo "$LINE" | grep -iq "$KEYWORD"; then
-        COUNT=$((COUNT + 1))
-    fi
-done < "$LOGFILE"
-
-
-echo "----------------------------------------"
-echo "Keyword '$KEYWORD' found $COUNT times in $LOGFILE"
-echo "----------------------------------------"
-
+LOG_FILE=$1 if [ ! -f "$LOG_FILE" ]; then
+echo "Error: File not found!" exit 1
+fi
+error_count=0 warning_count=0 total_lines=0 while read line do
+total_lines=$((total_lines + 1)) if echo "$line" | grep -q "ERROR"; then error_count=$((error_count + 1)) fi
+if echo "$line" | grep -q "WARNING"; then
+warning_count=$((warning_count + 1)) fi
+done < "$LOG_FILE" echo "====== LOG ANALYSIS SUMMARY ======"
+echo "Total lines: $total_lines" echo "ERROR lines: $error_count" echo "WARNING lines: $warning_count" 
 
 # Show last 5 matching lines
 echo "Last 5 matching lines:"
